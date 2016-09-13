@@ -23,7 +23,7 @@ def turing_robot(msg, bot):
         "info": msg.content,
     }
 
-    response = requests.request("GET", params=querystring)
+    response = requests.request("GET", url, params=querystring)
 
     response_json = response.json()
     bot.reply_msg(msg, response_json.get('text'))
